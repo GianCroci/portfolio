@@ -1,0 +1,86 @@
+---
+import ProyectosItem from "./ProyectosItem.astro";
+
+const PROYECTOS = [
+  {
+    fecha: "Noviembre 2025",
+    titulo: "E-commerce - Taller Web 2",
+    descripcion:
+      "Desarrollo de un pequeño sistema de marketplace para explorar arquitectura fullstack moderna. Incluye armado de interfaces, comunicación con backend y persistencia de datos. Proyecto orientado a entender flujos completos desde el cliente hasta la base de datos.",
+    enlace: "https://github.com/GianCroci/csgo-skin-market",
+    imagenes: [
+      "/images/skin-market-2.webp",
+      "/images/skin-market-1.webp",
+      "/images/skin-market-3.webp",
+    ],
+    tecnologias: [
+      { nombre: "Angular", tag: "/tags/angular.svg"},
+      { nombre: "NodeJs", tag: "/tags/nodejs.svg"},
+      { nombre: "Prisma", tag: "/tags/prisma_dark.svg"},
+      { nombre: "Express", tag: "/tags/expressjs_dark.svg"},
+      { nombre: "PostgreSQL", tag: "/tags/postgresql.svg"},],
+  },
+  {
+    fecha: "Noviembre 2025",
+    titulo: "Pregunlam - Programación Web 2",
+    descripcion:
+      "Proyecto orientado a practicar lógica de juego, manejo de sesiones y operaciones con bases de datos. Implementación de preguntas, puntajes y flujo de partida con integración a SQL.",
+    enlace: "https://pregunlam.rf.gd/",
+    imagenes: [
+      "/images/pregunlam-2.webp",
+      "/images/pregunlam-1.webp",
+      "/images/pregunlam-3.webp",
+    ],
+    tecnologias: [
+      { nombre: "PHP", tag: "/tags/php_dark.svg"},
+      { nombre: "PhpMyAdmin", tag: "/tags/phpmyadmin.webp"},
+      { nombre: "Tailwind", tag: "/tags/tailwindcss.svg"},
+      ],
+  },
+  {
+    fecha: "Junio 2025",
+    titulo: "Juego medieval - Taller Web 1",
+    descripcion:
+      "Aplicación web basada en un sistema de personajes, batallas y funcionalidades internas. Construida siguiendo una arquitectura MVC, utilizando tdd, WebSocket y pruebas E2E, con manejo de vistas, sesiones, lógica de negocio y conexión a base de datos. Incluye flujo de login, creación de personajes y sistema de combate.",
+    enlace: "https://github.com/GianCroci/TallerWeb1",
+    imagenes: [
+      "/images/medieval-2.webp",
+      "/images/medieval-1.webp",
+      "/images/medieval-3.webp",
+    ],
+    tecnologias: [
+      { nombre: "JAVA", tag: "/tags/java.svg"},
+      { nombre: "Spring", tag: "/tags/spring.svg"},
+      { nombre: "Playwright", tag: "/tags/playwright.svg"},
+      { nombre: "Docker", tag: "/tags/docker.svg"},
+      ],
+  },
+
+  {
+    fecha: "Marzo 2024",
+    titulo: "Clonacion Landing Burger King",
+    descripcion:
+      "Clonacion de la landing page de Burger King para conocer Vite y Tailwind, enfocada en la maquetación responsiva y el diseño visual.",
+    enlace: "https://giancroci.github.io/cloneBurgerKing/",
+    imagenes: [
+      "/images/burgerking-2.webp",
+      "/images/burgerking-1.webp",
+      "/images/burgerking-3.webp",
+    ],
+    tecnologias: [
+      { nombre: "Vite", tag: "/tags/vitejs.svg"},
+      { nombre: "Tailwind", tag: "/tags/tailwindcss.svg"},
+      ],
+  },
+];
+---
+
+<ol class="relative border-s border-default ml-3">
+  {
+    PROYECTOS.map((proyecto) => (
+      <li class="mb-10 ms-4">
+        <ProyectosItem {...proyecto} />
+      </li>
+    ))
+  }
+</ol>

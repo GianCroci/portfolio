@@ -1,11 +1,75 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import SocialPills from "../components/icons/SocialPills.astro";
+import Github from "../components/icons/Github.astro";
+import Linkedin from "../components/icons/Linkedin.astro";
+import Mail from "../components/icons/Mail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Layout from "../layouts/Layout.astro";
+import Proyectos from "../components/Proyectos.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import University from "../components/icons/University.astro";
+import Progreso from "../components/Progreso.astro";
+import MateriasAprobadas from "../components/MateriasAprobadas.astro";
+import SobreMi from "../components/SobreMi.astro";
+import AboutMe from "../components/icons/AboutMe.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Portfolio de Gian Croci - Desarrollador y Programador Web">
+	<main class="px-4">
+		<SectionContainer class="py-32 pb-20">
+			<img
+				class="rounded-full size-44 border-4 border-white mb-4"
+				src="/images/sobre-mi.jpg"
+				alt=""
+			/>
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold pb-6 lg:pb-10">Hola, soy Gian!</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]:">
+				<span class="opacity-80">
+				Estudiante de la Tecnicatura en Desarrollo Web, <br />en la </span><span
+					class="text-green-300/90 font-semibold opacity-100"
+					>Universidad Nacional de La Matanza</span
+				>.
+				<br /><span class="opacity-80">Te comparto algunos de mis proyectos y experiencias.</span>
+			</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPills href="https://www.linkedin.com/in/gian-croci">
+					<Linkedin class="size-4 lg:size-6" />
+					LinkedIn
+				</SocialPills>
+				<SocialPills href="https://github.com/GianCroci">
+					<Github class="size-4 lg:size-6" />
+					GitHub
+				</SocialPills>
+				<SocialPills href="https://mail.google.com/mail/?view=cm&fs=1&to=giancroci5@gmail.com">
+					<Mail class="size-4 lg:size-6" />
+					giancroci5@gmail.com
+				</SocialPills>
+			</nav>
+		</SectionContainer>
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7"/>
+				Proyectos Universitarios
+			</h2>
+			<Proyectos />
+		</SectionContainer>
+		<SectionContainer id="formacion">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<University class="size-7"/>
+				Formación Académica
+			</h2>
+			<Progreso />
+			<MateriasAprobadas />
+		</SectionContainer>
+		<SectionContainer id="sobre-mi">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center mt-6">
+				<AboutMe class="size-7"/>
+				Sobre mí
+			</h2>
+			<SobreMi />
+		</SectionContainer>
+	</main>
 </Layout>

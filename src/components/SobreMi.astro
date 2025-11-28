@@ -1,0 +1,32 @@
+---
+import SocialPills from "./icons/SocialPills.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Github from "./icons/Github.astro";
+import Instagram from "./icons/Instagram.astro";
+---
+<div class="flex flex-col md:flex-row lg:flex-row items-start bg-white/5 p-4 border border-white/10 rounded-base shadow-xs w-full my-4">
+    <img class="object-cover w-64 h-64 md:w-48 md:h-48 rounded-full border-4 border-white my-5 md:mb-0 md:mr-4"  src="/images/sobre-mi.jpg" alt="Gian">
+    <div class="flex flex-col justify-between md:p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Te cuento un poco de mí</h5>
+        <p class="mb-2 text-white text-pretty"> Hace algunos años descubrí mi gusto por la programación. Me gusta estar capacitandome continuamente
+            y buscarle soluciones a los problemas que se presentan. <br>En la Universidad comprendí la importancia de trabajar en equipo y poder ser de ayuda a mis compañeros
+            me resulta gratificante. <br>Actualmente me encuentro en la parte final de la tecnicatura y en busqueda de oportunidades para adentrarme profesionalmente
+            en la programación.
+            <br>Como hobbie tengo un instagram dedicado a diseños graficos de futbolistas.
+        </p>
+        <nav class="flex gap-2 flex-wrap">
+				<SocialPills href="https://www.linkedin.com/in/gian-croci">
+					<Linkedin class="size-2 lg:size-4" />
+					LinkedIn
+				</SocialPills>
+				<SocialPills href="https://github.com/GianCroci">
+					<Github class="size-2 lg:size-4" />
+					GitHub
+				</SocialPills>
+				<SocialPills href="https://www.instagram.com/crocifutdesigns/">
+					<Instagram class="size-2 lg:size-6" />
+					Instagram
+				</SocialPills>
+			</nav>
+    </div>
+</div>

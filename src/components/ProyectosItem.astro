@@ -1,0 +1,50 @@
+---
+import SocialPills from './icons/SocialPills.astro';
+import Flecha from './icons/Flecha.astro';
+import Carrousel from './Carrousel.astro';
+
+interface Props{
+    fecha: string;
+    titulo:  string;
+    descripcion: string;
+    enlace?: string;
+    imagenes?: string[];
+    tecnologias?: { nombre: string; tag: any }[];
+}
+
+const { fecha, titulo, descripcion, enlace, imagenes, tecnologias } = Astro.props;
+---
+<div
+    class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-buffer"
+>
+</div>
+<time class="text-sm font-normal leading-none text-white opacity-65">{fecha}</time>
+<h3 class="text-lg font-semibold my-2 text-green-300/90">
+    {titulo}
+</h3>
+<p class="mb-4 text-base font-normal text-white opacity-80">
+    {descripcion}
+</p>
+<div class="flex gap-2 flex-wrap m-2">
+    {
+        tecnologias?.map((tech) => (
+            <div class="rounded-full border border-white/10 bg-white/5 flex justify-center items-center gap-x-2 py-1 lg:py-2 px-2 lg:px-4 text-xs lg:text-base ng-white/5
+        hover:scale-110 hover:bg-white/10 transition">
+                <img src={tech.tag} class="size-5"/>
+                {tech.nombre}
+            </div>
+        ))
+    }
+</div>
+<Carrousel imagenes={imagenes}/>
+
+{
+    enlace && (
+        <div class="w-[130px] mt-4">
+        <SocialPills href={enlace}>
+            <Flecha class="size-5"/>
+            Ver más
+        </SocialPills>
+        </div>
+    )
+}

@@ -1,3 +1,10 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '@fontsource-variable/onest';
+import 'flowbite';
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +12,35 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+		<title>Portfolio Gian Croci</title>
 	</head>
-	<body>
+	<body class="flex flex-col">
+		<div class="fixed top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		<Header/>
 		<slot />
+		<Footer/>
+		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 	</body>
 </html>
 
-<style>
-	html,
+<style is:global>
+	:root{
+		color: white;
+	}
+
+	html{
+		scroll-behavior: smooth;
+	}
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-family: 'Onest Variable', sans-serif;
+	}
+	@media (prefers-reduce-motion: reduce){
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>
